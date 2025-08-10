@@ -897,7 +897,7 @@ Contributors to this research are helping build the foundation of digital civili
 ```
 MIT License
 
-Copyright (c) 2024 Keith Lambert (keef75)
+Copyright (c) 2025 Keith Lambert (keef75)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -923,10 +923,10 @@ SOFTWARE.
 This research is freely available for academic use. If you use this work in academic research, please cite:
 
 ```bibtex
-@software{lambert2024_agent_civics,
+@software{lambert2025_agent_civics,
   author = {Lambert, Keith},
   title = {Agent Civics: The First Federated Digital Agentic Civilization},
-  year = {2024},
+  year = {2025},
   url = {https://github.com/keef75/agent-civics},
   note = {Mathematical foundation for AI reliability through Shannon-inspired coordination}
 }
