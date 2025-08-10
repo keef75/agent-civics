@@ -1,0 +1,25 @@
+{
+  "test_start": "2025-08-10T02:05:31.162274",
+  "single_agent_results": {
+    "error": "could not convert string to float: 'slow'"
+  },
+  "federated_results": {
+    "error": "could not convert string to float: 'slow'"
+  },
+  "meta_federation_results": {
+    "error": "'MetaFederationTaskAPI' object has no attribute 'process_request'"
+  },
+  "comparative_analysis": {
+    "error": "No valid test results to analyze"
+  },
+  "antifragile_insights": {
+    "error": "No recovery measurements available"
+  },
+  "learning_insights": {
+    "pattern_count": 0,
+    "recovery_trends": {},
+    "byzantine_detection_accuracy": 0.0,
+    "antifragile_score": 0.0,
+    "recommendations": []
+  }
+}

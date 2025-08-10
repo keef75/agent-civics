@@ -1,0 +1,83 @@
+{
+  "test_timestamp": "2025-08-10T02:10:01.835570",
+  "test_type": "parallel_chaos_engineering",
+  "results": [
+    {
+      "architecture": "single_agent",
+      "reliability": 0.8,
+      "recovery_time_ms": 3163.323757107914,
+      "cascade_prevention_rate": 0.0,
+      "byzantine_detection_rate": 0.0,
+      "antifragile_score": 0.0,
+      "failures_injected": 29
+    },
+    {
+      "architecture": "level1_federation",
+      "reliability": 0.93,
+      "recovery_time_ms": 462.81882475090947,
+      "cascade_prevention_rate": 0.9629629629629629,
+      "byzantine_detection_rate": 0.0,
+      "antifragile_score": 0.0,
+      "failures_injected": 27
+    },
+    {
+      "architecture": "meta_federation",
+      "reliability": 0.9,
+      "recovery_time_ms": 374.8319462220113,
+      "cascade_prevention_rate": 0.9310344827586207,
+      "byzantine_detection_rate": 1.5,
+      "antifragile_score": 0.0,
+      "failures_injected": 29
+    }
+  ],
+  "rankings": {
+    "reliability": [
+      [
+        "level1_federation",
+        0.93
+      ],
+      [
+        "meta_federation",
+        0.9
+      ],
+      [
+        "single_agent",
+        0.8
+      ]
+    ],
+    "recovery_speed": [
+      [
+        "meta_federation",
+        374.8319462220113
+      ],
+      [
+        "level1_federation",
+        462.81882475090947
+      ],
+      [
+        "single_agent",
+        3163.323757107914
+      ]
+    ],
+    "antifragile": [
+      [
+        "single_agent",
+        0.0
+      ],
+      [
+        "level1_federation",
+        0.0
+      ],
+      [
+        "meta_federation",
+        0.0
+      ]
+    ]
+  },
+  "validation": {
+    "byzantine_fault_tolerance": true,
+    "cascade_prevention": true,
+    "antifragility_demonstrated": false,
+    "error_pattern_learning": false
+  }
+}
