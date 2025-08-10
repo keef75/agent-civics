@@ -5,7 +5,7 @@
 [![Reliability](https://img.shields.io/badge/reliability-99.99%25-brightgreen.svg)](https://github.com/keef75/agent-civics)
 [![Architecture](https://img.shields.io/badge/architecture-meta--federation-purple.svg)](https://github.com/keef75/agent-civics)
 
-> **Historic Achievement**: This repository contains the world's first working implementation of federated digital agentic civilization infrastructure, achieving 99.99% system reliability through mathematical coordination of AI agents inspired by Shannon's information theory.
+> **Historic Achievement**: This repository contains the world's first working implementation of federated digital agentic civilization infrastructure, achieving SOA system reliability through mathematical coordination of AI agents inspired by Shannon's information theory.
 
 ---
 
