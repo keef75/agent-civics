@@ -70,6 +70,49 @@ Sequential tries (no hierarchy): P(correct) = 1 - ε^(N×D)
 
 *We use hierarchical OR-of-OR with perfect verification; in practice, coordination/verification failures and residual error correlation reduce realized reliability below the independence upper bound. We quantify these effects in the cache workload as ~1.5% net error at 3×3.*
 
+### OR-of-OR Reliability Explainer (spoon-fed)
+
+**What it is — no voting, just verifying**  
+- Run **N** diverse attempts in parallel (breadth). If **any** passes a verifier, we accept → logical **OR** across N.  
+- If none pass, run another hop (repair/try-again) up to **D** times → **OR across hops of OR across attempts** (“OR-of-OR”).
+
+**Formula (perfect verifier)**  
+- Single-attempt error = **ε**.  
+- One hop with N attempts fails only if **all** are wrong: **εⁿ** → success that hop = **1 − εⁿ**.  
+- D hops fail only if **every** attempt in **every** hop is wrong: **ε^(N^D)**.  
+- **Overall success:** **P(success) = 1 − ε^(N^D)**.
+
+**Feel it with numbers**  
+- ε = 0.30, N = 3 → per-hop fail = 0.3³ = 0.027 → success 97.3%.  
+- Add one more hop (D = 2): fail = 0.3^(3²) = 0.3⁹ ≈ 2.0e-5 → success > 99.998%.  
+- Small depth turns “pretty good” into “basically certain.”
+
+**Imperfect verifier (quick intuition)**  
+- If the verifier sometimes **accepts a wrong answer** (false-positive β) or **misses a right one** (false-negative α), think in terms of an **effective error**:  
+  - **ε_eff ≈ ε + β − εβ** (accounts for letting bad slip through).  
+  - Missed rights (α) reduce the chance we notice a good candidate; practically a small per-hop penalty.  
+- Then reason as **1 − (ε_eff)^(N^D)**. Our unit/property/SymPy tests make β≈0 and α small in this POC.
+
+**Correlation matters (agents making the same mistake)**  
+- If attempts correlate (pairwise ρ), you don’t get full N independent shots.  
+- Use an **effective breadth**: **N_eff ≈ N·(1 − ρ)** → think **1 − ε^(N_eff^D)**.  
+- This is why we diversify models/prompts/seeds/tools and add ADV to surface different failures.
+
+**How this repo maps N and D**  
+- **Breadth N** = number of **GEN** variants tried in parallel per hop (different prompts/seeds/models).  
+- **Verifier** = **VER** (unit/property tests) + **ADV** (adversarial new tests) raising verifier power.  
+- **Depth D** = number of **repair hops** (m→m+1 means D=2). **ARB** accepts the **first verified-correct** candidate — no voting.
+
+**Tiny pseudocode**
+```python
+for d in range(D):              # depth
+    candidates = parallel_gen(N)
+    for c in candidates:        # logical OR across N
+        if verify(c):
+            return ACCEPT(c)
+return FAIL                     # all attempts failed across all hops
+
+
 ### Mathematical Proof of Exponential Scaling
 
 **Theorem**: For any agent error rate ε > 0 and federation parameters N ≥ 3, D ≥ 2:
