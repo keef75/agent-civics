@@ -176,7 +176,7 @@ Our research progresses through four architectural tiers, each building on the p
 
 ### Core System Components
 
-```text
+text
 agent-civics/
 ├── 🧮 Mathematical Foundation
 │   ├── rate_limiter_baseline.py      # Single-agent reference (3.46M RPS)
