@@ -13,6 +13,7 @@
 
 - [🌟 Overview](#-overview)
 - [🧮 Mathematical Foundation](#-mathematical-foundation)
+       - [OR-of-OR Reliability Explainer](#or-of-or-reliability-explainer-spoon-fed)
 - [🏗️ Architecture](#️-architecture)
 - [🚀 Key Achievements](#-key-achievements)
 - [⚡ Quick Start](#-quick-start)
