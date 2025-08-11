@@ -176,52 +176,46 @@ Our research progresses through four architectural tiers, each building on the p
 
 ### Core System Components
 
-```
+```text
 agent-civics/
 ├── 🧮 Mathematical Foundation
 │   ├── rate_limiter_baseline.py      # Single-agent reference (3.46M RPS)
-│   ├── rate_limiter_alpha.py         # Correctness-focused implementation  
+│   ├── rate_limiter_alpha.py         # Correctness-focused implementation
 │   ├── rate_limiter_beta.py          # Performance-focused implementation
 │   ├── rate_limiter_gamma.py         # Defensive programming implementation
 │   └── rate_limiter_final.py         # Synthesized optimal solution
-│
 ├── 🏗️ Federation Architecture
 │   ├── federation_orchestrator.py    # Core federation management system
-│   ├── cache_single.py              # Single-agent cache baseline
-│   ├── cache_federated.py           # Multi-agent cache federation
-│   └── cache_meta_federated.py      # 3-level recursive meta-federation
-│
-├── 🤖 Self-Evolution System  
-│   ├── error_pattern_analyzer.py    # Autonomous error pattern detection
-│   ├── cache_prefetch_optimizer.py  # Auto-generated ML-based optimization
-│   ├── consistency_coordinator.py   # Auto-generated coordination optimization
-│   ├── shard_rebalancer.py         # Auto-generated load balancing
-│   └── evolved_cache_federation.py  # Integrated evolution system
-│
+│   ├── cache_single.py               # Single-agent cache baseline
+│   ├── cache_federated.py            # Multi-agent cache federation
+│   └── cache_meta_federated.py       # 3-level recursive meta-federation
+├── 🤖 Self-Evolution System
+│   ├── error_pattern_analyzer.py     # Autonomous error pattern detection
+│   ├── cache_prefetch_optimizer.py   # Auto-generated ML-based optimization
+│   ├── consistency_coordinator.py    # Auto-generated coordination optimization
+│   ├── shard_rebalancer.py           # Auto-generated load balancing
+│   └── evolved_cache_federation.py   # Integrated evolution system
 ├── 🚀 Production Examples
-│   ├── task_api_single.py           # Single-agent task management
-│   ├── task_api_federated.py        # Federated task management  
-│   └── task_api_meta.py            # Meta-federated orchestration
-│
+│   ├── task_api_single.py            # Single-agent task management
+│   ├── task_api_federated.py         # Federated task management
+│   └── task_api_meta.py              # Meta-federated orchestration
 ├── 🧪 Validation & Testing
-│   ├── comprehensive_test.py        # Cross-implementation validation
-│   ├── test_self_evolution.py       # Evolution effectiveness testing
-│   ├── chaos_test_framework.py      # Byzantine fault tolerance testing
-│   └── performance_benchmark.py     # Performance measurement suite
-│
+│   ├── comprehensive_test.py         # Cross-implementation validation
+│   ├── test_self_evolution.py        # Evolution effectiveness testing
+│   ├── chaos_test_framework.py       # Byzantine fault tolerance testing
+│   └── performance_benchmark.py      # Performance measurement suite
 ├── 📊 Research Documentation
-│   ├── FEDERATION_CIVILIZATION_BLUEPRINT.md  # Scaling to 1M+ agents
-│   ├── DEPTH_MULTIPLICATION_PROOF.md         # Mathematical validation
-│   ├── META_FEDERATION_FINAL_REPORT.md       # Architecture analysis
+│   ├── FEDERATION_CIVILIZATION_BLUEPRINT.md   # Scaling to 1M+ agents
+│   ├── DEPTH_MULTIPLICATION_PROOF.md          # Mathematical validation
+│   ├── META_FEDERATION_FINAL_REPORT.md        # Architecture analysis
 │   └── federation_civilization_dashboard.html # Interactive visualization
-│
 └── 🎯 Agent Specializations
-    └── .claude/agents/              # Specialized AI agent definitions
-        ├── gen-alpha.md            # Test-driven development focus
-        ├── gen-beta.md             # Performance optimization focus  
-        ├── gen-gamma.md            # Defensive programming focus
-        └── verifier.md             # Solution validation and synthesis
-```
+    └── .claude/agents/
+        ├── gen-alpha.md             # Test-driven development focus
+        ├── gen-beta.md              # Performance optimization focus
+        ├── gen-gamma.md             # Defensive programming focus
+        └── verifier.md              # Solution validation and synthesis
+
 
 ---
 
